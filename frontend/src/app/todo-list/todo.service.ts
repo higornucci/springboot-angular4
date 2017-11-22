@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Todo } from './todo';
-import { Headers, Http } from '@angular/http';
+import { Http } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 
 @Injectable()
@@ -29,7 +29,7 @@ export class TodoService {
       .catch(this.handleError);
   }
 
-  deleteTodo(id: string): Promise<any> {
+  deleteTodo(id: number): Promise<any> {
     return this.http.delete(this.baseUrl + '/api/todos/' + id)
       .toPromise()
       .catch(this.handleError);

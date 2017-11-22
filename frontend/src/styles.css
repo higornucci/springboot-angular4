@@ -31,8 +31,7 @@ input {
 .todo-content {
   max-width: 650px;
   width: 100%;
-  margin: 0 auto;
-  margin-top: 60px;
+  margin: 60px auto 0;
   background-color: #fff;
   padding: 15px;
   box-shadow: 0 0 4px rgba(0,0,0,.14), 0 4px 8px rgba(0,0,0,.28);
@@ -68,13 +67,9 @@ input {
 
 .todo-content ul {
   list-style: none;
-  margin: 0;
-  padding: 0;
   max-height: 450px;
-  padding-left: 15px;
-  padding-right: 15px;
-  margin-left: -15px;
-  margin-right: -15px;
+  padding: 0 15px;
+  margin: 0 -15px;
   overflow-y: scroll;
 }
 

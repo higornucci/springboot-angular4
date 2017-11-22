@@ -34,7 +34,7 @@ public class TodoController {
     }
 
     @GetMapping(value="/todos/{id}")
-    public ResponseEntity<Todo> getTodoById(@PathVariable("id") String id) {
+    public ResponseEntity<Todo> getTodoById(@PathVariable("id") Integer id) {
         Todo todo = todoRepository.findOne(id);
         if(todo == null) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
@@ -44,7 +44,7 @@ public class TodoController {
     }
 
     @PutMapping(value="/todos/{id}")
-    public ResponseEntity<Todo> updateTodo(@PathVariable("id") String id,
+    public ResponseEntity<Todo> updateTodo(@PathVariable("id") Integer id,
                                            @Valid @RequestBody Todo todo) {
         Todo todoData = todoRepository.findOne(id);
         if(todoData == null) {
@@ -57,7 +57,7 @@ public class TodoController {
     }
 
     @DeleteMapping(value="/todos/{id}")
-    public void deleteTodo(@PathVariable("id") String id) {
+    public void deleteTodo(@PathVariable("id") Integer id) {
         todoRepository.delete(id);
     }
 }
